@@ -74,10 +74,12 @@ if __name__ == "__main__":
     index = 4
     # start sassertion error if the idnex is greater than the sentence
     assert index < len(lst)-1, f"' '"
-    print(x.set_word(index, "potatoes"))
+    x.set_word(index, "potatoes")
     # x.get_word(4)
     # x.set_word(4, "potatos")
     # x.scramble()
     # print(x.__repr__())
-    # print("Sentence Unit test sucessful")
-    # print(sent)
+    print("Sentence Unit test sucessful")
+    print(sent)
+    print(x.scramble())
+    print(x.__repr__())
