@@ -1,10 +1,6 @@
 import string
 
 
-class OutOfIndex (Exception):
-    print(' ')
-
-
 class Sentence:
 
     def __init__(self, sent=str()):
@@ -34,26 +30,45 @@ class Sentence:
         w_lst = self.__s.split()
         return w_lst
 
-    def get_word(self, w_lst, desired_w):
-        print(len(w_lst))
-        if int(desired_w) > len(w_lst)-1:
-            raise OutOfIndex
+    def get_word(self, index):
+        # pass
+        lst = self.get_all_words()
+        # print(lst)
+        # print(len(w_lst))
+        # print(w_lst[desired_w])
+        # this if block needs to go in if __name_ = "__main__" else would be the get_one_word statement
+        if int(index) > len(lst)-1:
+            return '" "'
+        # print("wher is none")
         else:
-            return w_lst[desired_w]
+            return lst[index]
 
+    def set_word(self, index, new_word):  # need help with tis one
+        # print(index, new_word)  # prints words
+        # old_word = self.get_word(index)
+        # return old_word[index]
+        # sent.replace(index, new_word)
+        # print(sent)
+        # print(self.__s)
+        # pass
+        sent = self.__s
+        old_word = self.get_word(index)
+        return sent.replace(old_word, new_word)
+        # return new_s
 
-def set_word():
-    pass
+    def scramble(self):
+        pass
 
-
-def scramble():
-    pass
+    def __repr__(self) -> str:
+        return self.__s + '.'
 
 
 if __name__ == "__main__":
     sent = 'I want to eat chicken and sleep for three years. I wish I had a cat named Smoke!'
     x = Sentence(sent)
-    get_words = x.get_all_words()
-    print(get_words)
-    get_one_word = x.get_word(get_words, 1)
-    # print(get_one_word)
+    x.get_all_words()
+    # print(get_words) # returns list of words
+    x.get_word(4)
+    x.set_word(4, "potatos")
+    # print("Sentence Unit test sucessful")
+    # print(sent)
