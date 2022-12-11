@@ -69,10 +69,15 @@ class Sentence:
 if __name__ == "__main__":
     sent = 'I want to eat chicken and sleep for three years. I wish I had a cat named Smoke!'
     x = Sentence(sent)
-    x.get_all_words()
+    lst = x.get_all_words()
     # print(get_words) # returns list of words
-    x.get_word(4)
-    x.set_word(4, "potatos")
-    print(x.scramble())
+    index = 4
+    # start sassertion error if the idnex is greater than the sentence
+    assert index < len(lst)-1, f"' '"
+    print(x.set_word(index, "potatoes"))
+    # x.get_word(4)
+    # x.set_word(4, "potatos")
+    # x.scramble()
+    # print(x.__repr__())
     # print("Sentence Unit test sucessful")
     # print(sent)
