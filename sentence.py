@@ -1,4 +1,5 @@
 import string
+import random
 
 
 class Sentence:
@@ -57,7 +58,9 @@ class Sentence:
         # return new_s
 
     def scramble(self):
-        pass
+        lst = self.get_all_words()
+        scramble = random.sample(lst, len(lst))
+        return scramble
 
     def __repr__(self) -> str:
         return self.__s + '.'
@@ -70,5 +73,6 @@ if __name__ == "__main__":
     # print(get_words) # returns list of words
     x.get_word(4)
     x.set_word(4, "potatos")
+    print(x.scramble())
     # print("Sentence Unit test sucessful")
     # print(sent)
